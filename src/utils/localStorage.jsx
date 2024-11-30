@@ -1,10 +1,18 @@
 
 
-   const employees = [
-      {
+   const employees = [ 
+    {
         "id": "EMP001",
+        "firstName": "Arjun",
         "email": "john.doe@company.com",
         "password": "123",
+        "taskCount": {
+          "active": 1,
+          "newTask": 15,
+          "completed": 1,
+          "failed": 0,
+          "total": 3
+        },
         "tasks": [
           {
             "id": "TASK001",
@@ -43,8 +51,16 @@
       },
       {
         "id": "EMP002",
+        "firstName": "Priya",
         "email": "sarah.smith@company.com",
         "password": "123",
+        "taskCount": {
+          "active": 2,
+          "newTask": 2,
+          "completed": 0,
+          "failed": 1,
+          "total": 4
+        },
         "tasks": [
           {
             "id": "TASK004",
@@ -94,8 +110,16 @@
       },
       {
         "id": "EMP003",
+        "firstName": "Rohit",
         "email": "michael.jones@company.com",
         "password": "123",
+        "taskCount": {
+          "active": 3,
+          "newTask": 2,
+          "completed": 1,
+          "failed": 0,
+          "total": 5
+        },
         "tasks": [
           {
             "id": "TASK008",
@@ -156,8 +180,16 @@
       },
       {
         "id": "EMP004",
+        "firstName": "Neha",
         "email": "lisa.wilson@company.com",
         "password": "123",
+        "taskCount": {
+          "active": 3,
+          "newTask": 1,
+          "completed": 1,
+          "failed": 0,
+          "total": 4
+        },
         "tasks": [
           {
             "id": "TASK013",
@@ -207,8 +239,16 @@
       },
       {
         "id": "EMP005",
+        "firstName": "Aditya",
         "email": "david.brown@company.com",
         "password": "123",
+        "taskCount": {
+          "active": 3,
+          "newTask": 2,
+          "completed": 0,
+          "failed": 0,
+          "total": 5
+        },
         "tasks": [
           {
             "id": "TASK017",
@@ -279,11 +319,13 @@
   ];
 
   export const setLocalStorage = () =>{
-    localStorage.setItem('employee',JSON.stringify(employees))
+    localStorage.setItem('employees',JSON.stringify(employees))
     localStorage.setItem('admin',JSON.stringify(admin))
   }
 
   export const getLocalStorage = () =>{
     const employees = JSON.parse(localStorage.getItem('employees'))
     const admin = JSON.parse(localStorage.getItem('admin'))
+    return {employees,admin}
+    
   }
