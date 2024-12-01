@@ -5,10 +5,10 @@ import CompleteTask from './CompleteTask'
 import FailedTask from './FailedTask'
 
 export default function TaskList({data}) {
-  
+  console.log(data,"hiiiiii")
   return (
     <div id='tasklist' className='h-[55%] overflow-x-auto flex items-center justify-start gap-5 flex-nowrap w-full py-5 mt-10'>
-     {data.value.tasks.map((elem, idx)=>{
+     {data.tasks.map((elem, idx)=>{
       if(elem.active){
         return <AcceptTask key={idx} />
       }
